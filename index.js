@@ -31,8 +31,7 @@ app.use("/uploads", express.static("uploads"));
 // Routes
 app.get("/", (req, res) => {
   // Implement your logic to fetch gallery items from a database or file
-  const galleryItems = [];
-  res.render("index", { galleryItems });
+  res.send({ message: "welcome to photoshop api" });
 });
 
 // ... Implement other routes for adding, editing, and deleting gallery items
