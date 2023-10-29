@@ -80,6 +80,8 @@ app.get("/delete/banner/:id", async (req, res) => {
         await bannerModel.deleteOne({ _id: id });
       } catch (error) {
         console.log(error);
+        await bannerModel.deleteOne({ _id: id });
+        res.send({ status: true, message: "success" });
       }
       res.send({ status: true, message: "success" });
     }
@@ -139,6 +141,8 @@ app.get("/delete/gallery/:id", async(req, res) => {
         res.send({status: true, message: "success"});
       } catch (error) {
         console.log(error);
+        await galleryModel.deleteOne({ _id: id });
+        res.send({status: true, message: "success"});
       }
     }
   } catch (err) {
